@@ -60,11 +60,43 @@ class Die //models one single dice cube
 		rect(myX, myY, dieWidth, dieWidth);
 		fill(0, 255, 0);
 		//one dot
-		//ellipse(myX + 25, myY + 25, 10, 10);
+			//ellipse(myX + 25, myY + 25, 10, 10);
 
 		//2 dots
-		ellipse(myX + 16.6f, myY + 16.6f, 10, 10);
-		ellipse(myX + 33.4f, myY + 33.4f, 10, 10);
+			//ellipse(myX + dieWidth/3, myY + dieWidth/3, 10, 10);
+			//ellipse(myX + (dieWidth*2)/3, myY + (dieWidth*2)/3, 10, 10);
+
+		//3 dots
+			//ellipse(myX + (dieWidth)/5, myY + (dieWidth)/5, 10, 10);
+			//ellipse(myX + 25, myY + 25, 10, 10);
+			//ellipse(myX + (dieWidth*4)/5, myY + (dieWidth*4)/5, 10, 10);
+
+		//4 dots
+			//ellipse(myX + dieWidth/4, myY + dieWidth/4, 10, 10);
+			//ellipse(myX + (dieWidth*3)/4, myY + dieWidth/4, 10, 10);
+			//ellipse(myX + (dieWidth*3)/4, myY + (dieWidth*3)/4, 10, 10);
+			//ellipse(myX + dieWidth/4, myY + (dieWidth*3)/4, 10, 10);
+
+		//5 dots
+				//like #4 dots
+			//ellipse(myX + dieWidth/4, myY + dieWidth/4, 10, 10);
+			//ellipse(myX + (dieWidth*3)/4, myY + dieWidth/4, 10, 10);
+			//ellipse(myX + (dieWidth*3)/4, myY + (dieWidth*3)/4, 10, 10);
+			//ellipse(myX + dieWidth/4, myY + (dieWidth*3)/4, 10, 10);
+				//5th dot like #1 dot
+			//ellipse(myX + 25, myY + 25, 10, 10);
+
+		//6 dots 
+				//similar to 4 dots
+				//left 3
+			ellipse(myX +   dieWidth/4, myY + dieWidth/6, 10, 10);
+			ellipse(myX + (dieWidth)/4, myY + (dieWidth*3)/6, 10, 10);
+			ellipse(myX + (dieWidth)/4, myY + (dieWidth*5)/6, 10, 10);
+			//ellipse(myX + dieWidth/4, myY + (dieWidth*3)/4, 10, 10);
+
+
+
+
 
 	}
 }
