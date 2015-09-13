@@ -63,14 +63,16 @@ class Die //models one single dice cube
 
 		//variable initializations here
 	}
-	public void roll()
+	public int roll()
 	{
 		//your code here
+		int ranNum = (int)(Math.random()*6 + 1);
+		return ranNum;
 	}
 	public void show()
 	{
 		//your code here
-		int ranNum = (int)(Math.random()*6 + 1);
+		int ranNum = roll();
 		stroke(0, 255, 0);
 		fill(0, 0, 0);
 		rect(myX, myY, dieWidth, dieWidth);
