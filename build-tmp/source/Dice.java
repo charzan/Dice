@@ -15,24 +15,32 @@ import java.io.IOException;
 public class Dice extends PApplet {
 
 int dieWidth = 50;
+int sum;
 
 
+Die a;
 public void setup()
 {
 	noLoop();
-	size(500, 500);
+	
 }
 public void draw()
 {
 	background(0, 0, 0);
+	
 	//Die a = new Die(50, 50);
 	//Die b = new Die(150, 50);
-	for(int row = 25; row <+ 500; row += dieWidth*2){
-		for(int column = 25; column <= 500; column += dieWidth* 2){
-			Die a = new Die(row, column); 
+	for(int row = 25; row <+ 700; row += dieWidth*2){
+		for(int column = 25; column <= 1000; column += dieWidth* 2){
+			a = new Die(column, row); 
 			a.show();
+
 		}
 	}
+	textSize(25);
+	text("You rolled: " + sum, (width/2 - 80), height - 100);
+
+
 	
 	//a.show();
 	//b.show();
@@ -41,6 +49,7 @@ public void draw()
 public void mousePressed()
 {
 	redraw();
+	sum = 0;
 }
 class Die //models one single dice cube
 {
@@ -71,6 +80,7 @@ class Die //models one single dice cube
 		{
 			//one dot
 			ellipse(myX + 25, myY + 25, 10, 10);
+			sum += 1;
 
 		}
 		if(ranNum == 2)
@@ -78,6 +88,7 @@ class Die //models one single dice cube
 			//2 dot
 			ellipse(myX + dieWidth/3, myY + dieWidth/3, 10, 10);
 			ellipse(myX + (dieWidth*2)/3, myY + (dieWidth*2)/3, 10, 10);
+			sum += 2;
 
 		}
 		if(ranNum == 3)
@@ -86,6 +97,7 @@ class Die //models one single dice cube
 			ellipse(myX + (dieWidth)/5, myY + (dieWidth)/5, 10, 10);
 			ellipse(myX + 25, myY + 25, 10, 10);
 			ellipse(myX + (dieWidth*4)/5, myY + (dieWidth*4)/5, 10, 10);
+			sum += 3;
 
 		}
 		if(ranNum == 4)
@@ -95,6 +107,7 @@ class Die //models one single dice cube
 			ellipse(myX + (dieWidth*3)/4, myY + dieWidth/4, 10, 10);
 			ellipse(myX + (dieWidth*3)/4, myY + (dieWidth*3)/4, 10, 10);
 			ellipse(myX + dieWidth/4, myY + (dieWidth*3)/4, 10, 10);
+			sum += 4;
 		}
 		if(ranNum == 5)
 		{
@@ -105,6 +118,7 @@ class Die //models one single dice cube
 			ellipse(myX + dieWidth/4, myY + (dieWidth*3)/4, 10, 10);
 			//center dot
 			ellipse(myX + 25, myY + 25, 10, 10);
+			sum += 5;
 
 
 		}
@@ -119,6 +133,8 @@ class Die //models one single dice cube
 			ellipse(myX + (dieWidth*3)/4, myY + dieWidth/6, 10, 10);
 			ellipse(myX + (dieWidth*3)/4, myY + (dieWidth*3)/6, 10, 10);
 			ellipse(myX + (dieWidth*3)/4, myY + (dieWidth*5)/6, 10, 10);
+
+			sum += 6;
 
 		}
 		//one dot
@@ -165,6 +181,7 @@ class Die //models one single dice cube
 
 	}
 }
+  public void settings() { 	size(1000, 900); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Dice" };
     if (passedArgs != null) {
